@@ -1,0 +1,582 @@
+/***** 
+    font-family:'thuluth-decorated';
+    font-family:'cairo-bold';
+*****/
+
+
+/** Global Style **/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'cairo-bold';
+  outline: none;
+  direction:rtl;
+}
+::-webkit-scrollbar{
+  width:0;
+}
+body{
+
+  scroll-behavior: smooth;
+}
+ul li{
+  list-style:none;
+}
+section h3{
+  font-size:30px;
+  text-align:center;
+  color: #43a047;
+  margin-bottom: 50px;
+  position: relative;
+}
+section h3::after ,
+section h3::before {
+  content: "";
+  position: absolute;
+  background-color: #43a047;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+section h3::after{
+  width: 50px;
+  bottom: -10px;
+}
+section h3::before{
+  width: 100px;
+  bottom:0px;
+}
+.container{
+  max-width: 1130px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 15px;
+}
+
+section{
+  padding: 70px 0;
+}
+/* ********header */
+.header{
+  position:fixed;
+  inset: 0;
+  z-index: 1;
+  transition: all .5s ease-in;
+  -webkit-transition: all .5s ease-in;
+  -moz-transition: all .5s ease-in;
+  -ms-transition: all .5s ease-in;
+  -o-transition: all .5s ease-in;
+  height: 70px;
+}
+.header .container{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  color: #fff;
+  transition: all .5s ease-in;
+  -webkit-transition: all .5s ease-in;
+  -moz-transition: all .5s ease-in;
+  -ms-transition: all .5s ease-in;
+  -o-transition: all .5s ease-in;
+  height: 80px;
+}
+
+.header.active{
+  height: 80px;
+  background-color:rgba(0, 0, 0, 0.6);
+
+}
+.header .container ul {
+  display: flex;
+}
+.header .container ul li{
+  position: relative;
+  cursor: pointer;
+}
+.header .container ul li:after{
+  content:"";
+  position: absolute;
+  width:0;
+  bottom: -5px;
+  left:0;
+  background-color:#fff;
+  height:2px;
+  transition:all .3s ease-in-out;
+  -webkit-transition:all .3s ease-in-out;
+  -moz-transition:all .3s ease-in-out;
+  -ms-transition:all .3s ease-in-out;
+  -o-transition:all .3s ease-in-out;
+}
+.header .container ul li:hover:after , .header .container ul li.active:after {
+  width: 100%;
+}
+.header .container .bars , .header .container ul .close{
+  display: none;
+}
+.header .container ul li:not(:first-of-type)
+,.header .container ul li:not(:last-of-type){
+  margin: 0 15px;
+}
+.header .logo{
+  font-family:'thuluth-decorated';
+  font-size: 55px;
+  cursor: pointer;
+}
+/* ====main */
+.main{
+  background: url("../images/1.jpg") center center/cover no-repeat;
+  padding:0;
+}
+.main .container{
+  min-height: 100vh;
+}
+.main .title{
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  color: #fff;
+}
+.main .title h2{
+  line-height: 1.9;
+  font-size:40px;
+  margin-bottom: 30px;
+}
+.main .title .btn{
+  border: 2px solid #fff;
+  background:transparent;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition:all .3s ease-in-out;
+  -webkit-transition:all .3s ease-in-out;
+  -moz-transition:all .3s ease-in-out;
+  -ms-transition:all .3s ease-in-out;
+  -o-transition:all .3s ease-in-out;
+  padding: 5px 15px;
+}
+.main .title .btn i{
+  font-size: 25px;
+  margin-right:20px;
+}
+.main .title .btn::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height:100%;
+  transition:all .4s ease-in-out;
+  -webkit-transition:all .4s ease-in-out;
+  -moz-transition:all .4s ease-in-out;
+  -ms-transition:all .4s ease-in-out;
+  -o-transition:all .4s ease-in-out;
+  background-color: #fff;
+  z-index:-1;
+}
+.main .title .btn:hover{
+  color: #23232323;
+}
+.main .title .btn:hover::after{
+  width: 100%;
+}
+/* =====hadith======== */
+.hadithContainer{
+  min-height:350px;
+  position:relative;
+  box-shadow: 4px 4px 4px 0 #d1d9e6 inset,
+  -4px -4px 4px 0 #d1d9e6 inset;
+  color: #232323;
+  text-align: center;
+  padding: 50px 20px;
+  padding-top: 70px;
+}
+.hadith .buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.hadith .buttons div{
+  background-image: linear-gradient(60deg, #66bb6a 0%, #43a047 100%);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14)  , 
+  0 7px 10px -5px rgba(76, 175, 88, 0.14) ;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.hadith .buttons .number{
+  padding: 10px 20px;
+  color: #43a047;
+  background-color: transparent;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14)  , 
+  0 7px 10px -5px rgba(76, 175, 88, 0.14) ;
+  color: #fff;
+}
+/* ==========lectures========== */
+.lectures .lectures-container{
+  display: flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap: wrap;
+}
+.lectures .lectures-container .right ,
+.lectures .lectures-container .left{
+  width: 48%;
+}
+.lectures .lectures-container .right .lec{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+.lectures .lectures-container .right .lec:hover{
+  transform: scale(.95);
+  -webkit-transform: scale(.95);
+  -moz-transform: scale(.95);
+  -ms-transform: scale(.95);
+  -o-transform: scale(.95);
+}
+.lectures-container .right .lec .lec-text{
+  width:calc(100% - 150px);
+}
+.lectures-container .right .lec .lec-text h4 {
+  font-size: 19px;
+}
+.lectures-container .right .lec .lec-text p {
+  font-size: 16px;
+}
+.lectures .lectures-container .right .lec img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-right: auto;
+  object-fit: cover;
+}
+.lectures-container .left {
+  position: sticky;
+  top: 0;
+}
+.lectures-container .left iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+/* =========== Quran Section*/
+.surhasContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.surhasContainer .surah{
+  min-height: 100px;
+  min-width: 150px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  margin: 5px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all .5 ease-in;
+  -webkit-transition: all .5 ease-in;
+  -moz-transition: all .5 ease-in;
+  -ms-transition: all .5 ease-in;
+  -o-transition: all .5 ease-in;
+  color: #232323;
+  font-size: 17px;
+}
+.surhasContainer .surah:hover{
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+/* pray time */
+.pray .cards{
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.pray .cards .card{
+  width: 250px;
+  min-height: 320px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  padding: 30px 20px;
+  margin: 20px auto;
+}
+.pray .cards .card .circle{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pray .cards .card .circle svg{
+  width:210px;
+  height:210px;
+}
+
+.pray .cards .card .circle svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 10;
+  stroke:#43a047 ;
+  transform: translate(5px , 5px);
+  -webkit-transform: translate(5px , 5px);
+  -moz-transform: translate(5px , 5px);
+  -ms-transform: translate(5px , 5px);
+  -o-transform: translate(5px , 5px);
+  stroke-dasharray: 2;
+  stroke-dashoffset: 1000;
+  animation: dash 4s linear infinite;
+  -webkit-animation: dash 4s linear infinite;
+}
+
+@keyframes dash {
+  to{
+    stroke-dashoffset: 0px;
+  }
+}
+
+.pray .cards .card .circle .praytime{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% ,-50%);
+  -webkit-transform: translate(-50% ,-50%);
+  -moz-transform: translate(-50% ,-50%);
+  -ms-transform: translate(-50% ,-50%);
+  -o-transform: translate(-50% ,-50%);
+  color: #43a047;
+  font-size:40px;
+  font-family:cursive;
+}
+.pray .cards .card p{
+  color: #43a047;
+  font-size:25px;
+  margin-top: 20px;
+  text-align:center;
+  font-weight:bold;
+  font-family:cursive;
+
+} 
+.footer{
+  padding: 0;
+}
+.footer svg {
+  fill: #43a047;
+  transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+}
+
+.footer .social{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  background-color: #43a047;
+}
+.footer .social a{
+  margin:15px ;
+  font-size: 35px;
+  color: #fff;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ===pop up */
+.surah-popup{
+  position:fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color:#fff;
+  z-index: 2;
+  overflow-y: scroll;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transition: all .4s ease-in;
+  -webkit-transition: all .4s ease-in;
+  -moz-transition: all .4s ease-in;
+  -ms-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+}
+.surah-popup.active{
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+}
+.surah-popup::-webkit-scrollbar{
+  width: 10px;
+  background-color:#fff;
+}
+.surah-popup::-webkit-scrollbar-thumb{
+  background-color:#43a047;
+}
+.close-popup{
+  position: sticky;
+  top: 5px;
+  right: 5px;
+  height:40px;
+  width:40px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  font-size: 23px;
+  cursor: pointer;
+
+}
+.surah-popup .ayat{
+  padding: 20px;
+  width: calc(100% - 40px);
+  margin-top: 20px;
+  margin-right: 40px;
+  color: #212121;
+  text-align: center;
+}
+.surah-popup .ayat p{
+  line-height:2;
+  width: 100%;
+  border-bottom: 2px solid #43a047;
+  margin-bottom: 10px;
+}
+
+/* scrollBtn */
+.scrollBtn{
+  position: fixed;
+  bottom: -50px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #666666;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  font-size:16px;
+  transition: all .4s ease-in;
+  -webkit-transition: all .4s ease-in;
+  -moz-transition: all .4s ease-in;
+  -ms-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.61);
+}
+.scrollBtn.active{
+  bottom: 20px;
+}
+/* resposnsive */
+@media (max-width:1024px) {
+  .lectures .lectures-container .right, .lectures .lectures-container .left{
+    width: 98%;
+  }
+  .header .container .bars{
+    display: block;
+    font-size: 25px;
+  }
+  .header .container ul{
+    position: fixed;
+    left: 0;
+    top:0px;
+    width: 250px;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.849);
+    flex-direction: column;
+    padding: 20px 15px;
+    text-align: center;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transition: all .7s ease-out;
+    -webkit-transition: all .7s ease-out;
+    -moz-transition: all .7s ease-out;
+    -ms-transition: all .7s ease-out;
+    -o-transition: all .7s ease-out;
+}
+.header .container ul.active{
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+}
+.header .container ul .close{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 22px;
+}
+  .header .container ul li{
+    font-size: 25px;
+    transition: all .4s ease-in;
+    -webkit-transition: all .4s ease-in;
+    -moz-transition: all .4s ease-in;
+    -ms-transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+}
+  .header .container li:not(:first-of-type), 
+  .header .container li:not(:last-of-type){
+    margin:15px 0 !important;
+  }
+  .header .container ul li:after{
+    /* display: none; */
+    background-color: #43a047;
+  }
+  .header .container ul li.active{
+    color: #43a047;
+  }
+}
